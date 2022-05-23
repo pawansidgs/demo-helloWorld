@@ -4,7 +4,7 @@ pipeline {
     environment {  
      EncCred = credentials('aesencrypt')   
     //Apigee-environment for each environment
-    apg_env_dev = "dev-1"
+    apg_env_dev = "dev-4"
     apg_env_uat = "uatint01"
     apg_env_prod = "prodint01"
     
@@ -19,7 +19,7 @@ pipeline {
     apg_svc_prod = "hdfcbank-apigee-runtime-prod"
         
     //API profile for each environment
-    apg_prof_dev = "dev-1"
+    apg_prof_dev = "dev-4"
     apg_prof_uat = "uatint01"
     apg_prof_prod = "prodint01"    
 }
@@ -78,9 +78,9 @@ stages {
                 script {
                     if (env.BRANCH_NAME == 'develop') {
                         sh '''
-                        cp /tmp/APIGEE/hdfc_dev_sa.enc .
+                        cp /tmp/APIGEE/sidgs_dev_sa.enc .
                         export key=$EncCred_PSW
-                        openssl enc -d -aes-256-cbc -in hdfc_dev_sa.enc -out $apg_svc_dev.json -k $key
+                        openssl enc -d -aes-256-cbc -in sidgs_dev_sa.enc -out $apg_svc_dev.json -k $key
                         '''
                        }
                     else if (env.BRANCH_NAME == 'uat') {
