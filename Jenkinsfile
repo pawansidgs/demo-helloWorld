@@ -3,6 +3,7 @@ pipeline {
     agent any
     
     environment {
+     EncCred = credentials('aesencrypt')   
     //Apigee-environment for each environment
     apg_env_dev = "dev-1"
     apg_env_uat = "uatint01"
