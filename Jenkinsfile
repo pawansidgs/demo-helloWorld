@@ -17,6 +17,11 @@ pipeline {
     apg_svc_dev = "sidgs-hybrid-adcaf5883700.json"
     apg_svc_uat = "hdfcbank-apigee-runtime-uat"
     apg_svc_prod = "hdfcbank-apigee-runtime-prod"
+        
+    //API profile for each environment
+    apg_prof_dev = "dev-4"
+    apg_prof_uat = "uatint01"
+    apg_prof_prod = "prodint01"    
 }
 
 tools { 
