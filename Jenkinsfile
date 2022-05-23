@@ -1,8 +1,7 @@
 #!groovy
 pipeline {
-    agent any
-    
-    environment {
+ agent any
+    environment {  
      EncCred = credentials('aesencrypt')   
     //Apigee-environment for each environment
     apg_env_dev = "dev-1"
