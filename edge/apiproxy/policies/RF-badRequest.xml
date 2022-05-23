@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault async="false" continueOnError="false" enabled="true" name="RF-badRequest">
+    <DisplayName>RF-badRequest</DisplayName>
+    <Properties/>
+    <FaultResponse>
+        <Set>
+            <Payload contentType="application/json" variablePrefix="@@" variableSuffix="##">{ "ResponseSignatureEncryptedValue": "", "GWSymmetricKeyEncryptedValue": "", "Scope": "@@requestPayload.Scope##", "TransactionId": "@@requestPayload.TransactionId##", "Status": "TH99400: Bad Request"}</Payload>
+            <StatusCode>400</StatusCode>
+            <ReasonPhrase>Bad Request</ReasonPhrase>
+        </Set>
+        <AssignVariable>
+            <Name>apigw.code</Name>
+            <Value>TH99400</Value>
+        </AssignVariable>
+        <AssignVariable>
+            <Name>apigw.message</Name>
+            <Value>Bad Request</Value>
+        </AssignVariable>
+    </FaultResponse>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</RaiseFault>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>demo-helloWorld</artifactId>
+    <packaging>jar</packaging>
+    <name>demo-helloWorld</name>
+
+    <parent>
+        <groupId>com.demo.api</groupId>
+        <artifactId>demo-helloWorld-parent</artifactId>
+        <version>1.0.1-RC1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+	<properties>
+        <teamName>demo</teamName>
+  	</properties>
+
+
+
+    <build>
+
+        <plugins>
+
+            <!-- copy the full apiproxy folder to target folder -->
+            <!--DONOT MODIFY-->
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <overwrite>true</overwrite>
+                            <resources>
+                                <resource>
+                                    <!--source -->
+                                    <directory>${project.root.dir}</directory>
+                                    <filtering>true</filtering>
+                                    <includes>
+                                        <include>apiproxy/**</include>
+                                        <include>test/integration/**</include>
+                                        <include>resources/**</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                            <!--target -->
+                            <outputDirectory>${target.root.dir}</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!--DONOT MODIFY-->
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <phase>prepare-package</phase>
+                        <configuration>
+                            <target>
+                                <copy toDir="${target.root.dir}/classes">
+                                    <fileset dir="${target.root.dir}">
+                                        <include name="apiproxy/**" />
+                                    </fileset>
+                                </copy>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+             <plugin>
+                <groupId>io.apigee.build-tools.enterprise4g</groupId>
+                <artifactId>apigee-edge-maven-plugin</artifactId>
+                <version>2.0.4</version>
+                <executions>
+                    <execution>
+                        <id>configure-bundle</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>configure</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>deploy-bundle</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        <plugin>
+                <groupId>com.apigee.edge.config</groupId>
+                <artifactId>apigee-config-maven-plugin</artifactId>
+                <version>2.0.1</version>
+                <executions>
+                    <execution>
+                        <id>create-config-kvms</id>
+                        <phase>verify</phase>                        
+                        <goals>
+                            <goal>kvms</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>create-config-targetserver</id>
+                        <phase>verify</phase>                        
+                        <goals>
+                            <goal>targetservers</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>create-config-apiproduct</id>
+                        <phase>install</phase>                        
+                        <goals>
+                            <goal>apiproducts</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>create-config-developer</id>
+                        <phase>install</phase>                        
+                        <goals>
+                            <goal>developers</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>create-config-app</id>
+                        <phase>install</phase>                        
+                        <goals>
+                            <goal>developerapps</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>         
+        </plugins>
+    </build>
+<profiles>
+         <profile>
+            <id>dev-1</id>
+            <properties>
+               <apigee.profile>dev-1</apigee.profile>
+                <!--<options>validate</options>--><!-- default org, replace with default org to avoid passing parameter e.g. -Dorg testmyapi -->
+                <apigee.hosturl>https://apigee.googleapis.com</apigee.hosturl>
+                <apigee.apiversion>v1</apigee.apiversion>
+                <apigee.org>${org}</apigee.org>
+                <apigee.env>dev-1</apigee.env>
+                <apigee.authtype>oauth</apigee.authtype> <!-- only option -->
+				<!--<apigee.tokenurl>${tokenurl}</apigee.tokenurl>--> <!-- optional: oauth -->
+                <!--<apigee.mfatoken>${mfatoken}</apigee.mfatoken>--> <!-- optional: mfa -->
+                <!--<apigee.bearer>${bearer}</apigee.bearer>--><!-- this takes precedence over service account file -->
+				<apigee.refresh>${refresh}</apigee.refresh> <!-- optional: Refresh token override -->
+                <apigee.serviceaccount.file>./sidgs-hybrid-adcaf5883700.json</apigee.serviceaccount.file>
+                <apigee.options>override</apigee.options><!-- override is default. Other options are async|clean--> 
+				<!--<apigee.clientid>${clientId}</apigee.clientid>--> <!-- optional: Oauth Client Id - Default is edgecli-->
+                <!--<apigee.clientsecret>${clientSecret}</apigee.clientsecret>--> <!-- optional: Oauth Client Secret Default is edgeclisecret-->
+                <!--<apigee.options>${options}</apigee.options>-->
+                 <!--<apigee.override.delay>10</apigee.override.delay>-->
+                <!--<apigee.delay>1000</apigee.delay>-->
+            </properties>
+        </profile>
+    </profiles>
+
+
+</project>

@@ -1,0 +1,11 @@
+{
+    "ApiKey" : "emwD9tCFoSwhpPUqZiGGHXKua3aMIEYB8nwtewyGLBnsjLgg",
+    "InvalidVerifyAPiKey": "mbDqYBRBwo2nTwM5US7jVA",
+    "client_id" : "emwD9tCFoSwhpPUqZiGGHXKua3aMIEYB8nwtewyGLBnsjLgg",
+    "client_secret" : "xji3E59lyxq6ZPo5h26aGC0COA4eh03GYoYmSuKQGYS2KEFiqB2ZUhHXP7BZk2yW",
+    "content_type" : "application/x-www-form-urlencoded",
+    "queryParam" : [
+        { "parameter": "grant_type", "value": "client_credentials" },
+        { "parameter": "scope", "value": "Snehal_Test" }
+      ]
+  }

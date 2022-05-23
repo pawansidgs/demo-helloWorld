@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault async="false" continueOnError="false" enabled="true" name="RF-invalidRequestScope">
+    <DisplayName>RF-invalidRequestScope</DisplayName>
+    <Properties/>
+    <FaultResponse>
+        <Set>
+            <Headers/>
+            <Payload contentType="application/json" variablePrefix="@@" variableSuffix="##">{"ResponseSignatureEncryptedValue":"","GWSymmetricKeyEncryptedValue":"","Scope":"@@requestPayload.Scope##","TransactionId":"@@requestPayload.TransactionId##","Status":"TH99401: Scope Validation Failed"}</Payload>
+            <StatusCode>401</StatusCode>
+            <ReasonPhrase>Unauthorized</ReasonPhrase>
+        </Set>
+        <AssignVariable>
+            <Name>apigw.code</Name>
+            <Value>TH99401</Value>
+        </AssignVariable>
+        <AssignVariable>
+            <Name>apigw.message</Name>
+            <Value>Scope Validation Failed</Value>
+        </AssignVariable>
+    </FaultResponse>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</RaiseFault>

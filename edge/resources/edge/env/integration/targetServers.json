@@ -1,0 +1,12 @@
+[
+    
+    {
+        "name": "HDFCBank",
+        "host": "openapiuat.hdfcbank.com",
+        "isEnabled": true,
+        "port": 9443,
+        "sSLInfo": {
+            "enabled": "true"   
+        }
+    }
+]

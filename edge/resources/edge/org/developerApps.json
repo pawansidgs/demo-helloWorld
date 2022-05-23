@@ -1,0 +1,12 @@
+{
+    "abhinavp@sidgs.com": [
+        {
+            "apiProducts": [
+                "OTP_Product"
+            ],
+            "callbackUrl": "",
+            "name": "OTP_App",
+            "scopes": []
+        }
+    ]
+}

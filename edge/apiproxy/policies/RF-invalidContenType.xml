@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault async="false" continueOnError="false" enabled="true" name="RF-invalidContenType">
+    <DisplayName>RF-invalidContenType</DisplayName>
+    <Properties/>
+    <FaultResponse>
+        <Set>
+            <Payload contentType="application/json" variablePrefix="@@" variableSuffix="##">{"ResponseSignatureEncryptedValue":"","GWSymmetricKeyEncryptedValue":"","Scope":"@@requestPayload.Scope##","TransactionId":"@@requestPayload.TransactionId##","Status": "TH99411: Invalid Content Type in API Request Message Payload"}</Payload>
+            <StatusCode>411</StatusCode>
+            <ReasonPhrase>Length Required</ReasonPhrase>
+        </Set>
+        <AssignVariable>
+            <Name>apigw.code</Name>
+            <Value>TH99411</Value>
+        </AssignVariable>
+        <AssignVariable>
+            <Name>apigw.message</Name>
+            <Value>Invalid Content Type in API Request Message Payload</Value>
+        </AssignVariable>
+    </FaultResponse>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</RaiseFault>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MessageLogging async="false" continueOnError="false" enabled="true" name="ML-setMessageLogging">
+    <DisplayName>ML-setMessageLogging</DisplayName>
+    <Syslog>
+        <!-- add logstash IP or host withhout HTTP scheme-->
+        <Host>flb-entrypoint.logging.svc.cluster.local</Host>
+        <Message variablePrefix="%" variableSuffix="#">SystemTimeStampIST = %logCreatedTimeStamp# | OTP_Generation_Service_Rest API :: | Environment.name = %environment.name# | Proxy.basepath = %proxy.basepath# | Proxy.pathsuffix = %proxy.pathsuffix# | apiproxyname = %apiproxy.name# | Apigee.apiproduct.name = %apigee.apiproduct.name# | Apigee.developer.app.name = %apigee.developer.app.name# | ClientIP = %IPAddress# | TransactionID = %requestPayload.TransactionId# | Scope = %requestPayload.Scope# | request:: SSL_Certificate_Received = %SSL_Certificate_Received# | SSL_Certificate_Expiry = %SSL_Certificate_Expiry# | SSL_Certificate_SubjectKeyIdentifier = %SSL_Certificate_SubjectKeyIdentifier# | SigningCertificateSubjectDN = %SigningCertificateSubjectDN# | req-refNo = %requestLogs.req-refNo# | response :: success = %isSuccess# | resp-Error_Code = %responseLogs.resp-ERROR_CODE# | resp-ERROR_MSG = %responseLogs.resp-ERROR_MSG# | RoutingStatusCode = %target.response.status.code# | BackendErrorMessage = %error.reason.phrase# | GatewayErrorCode = %apigw.code# | gatewayErrorMessage = %apigw.message# | client.received.start.timestamp = %client.received.start.timestamp# | client.sent.end.timestamp = %client.sent.end.timestamp# | target.sent.start.timestamp = %target.sent.start.timestamp# | target.received.end.timestamp = %target.received.end.timestamp# | requestSignatureEncryptedValue = %requestPayload.RequestSignatureEncryptedValue# | symmetricKeyEncryptedValue = %requestPayload.SymmetricKeyEncryptedValue#  | requestfromClient (after decryption) = %JWTToken# | requestfromClient (after unsign) = %jwt.Decode-JWT.payload-json# | requestRoutedtoBackend = %requestContentPayload# | ResponseFromBackend = %responseContentPayload# | ResponseToClient (Before Signing) = %APIGatewayResponse# | ResponseToClient (Before Encryption) = %JWS-variable# | ResponseToClient = %responsetoclient#</Message>
+        <Port>9090</Port>
+        <Protocol>TCP</Protocol>
+        <FormatMessage>true</FormatMessage>
+        <!-- for two-way SSL, add SSLInfo, for more info - https://docs.apigee.com/api-platform/reference/policies/message-logging-policy#syslog-over-tlsssl -->
+    </Syslog>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <logLevel>ALERT</logLevel>
+</MessageLogging>

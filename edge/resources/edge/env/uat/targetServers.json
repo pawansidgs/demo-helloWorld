@@ -1,0 +1,13 @@
+[
+    
+    {
+        "name": "GoldsecSoaUatHdfcBankCom-5142",
+        "host": "goldsecsoauat.hdfcbank.com",
+        "isEnabled": true,
+        "port": 5142,
+        "sSLInfo": {
+            "clientAuthEnabled": "true",
+              "enabled": "true"
+        }
+    }
+  ]

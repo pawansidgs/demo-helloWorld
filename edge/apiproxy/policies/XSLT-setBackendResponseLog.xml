@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<XSL continueOnError="false" enabled="true" name="XSLT-setBackendResponseLog">
+    <DisplayName>XSLT-setBackendResponseLog</DisplayName>
+    <Properties/>
+    <Source>response</Source>
+    <ResourceURL>xsl://XSLT-setBackendResponseLog.xsl</ResourceURL>
+    <Parameters ignoreUnresolvedVariables="true"/>
+    <OutputVariable/>
+</XSL>

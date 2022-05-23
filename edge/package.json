@@ -1,0 +1,14 @@
+{
+	"name": "demo-helloWorld",
+	"version": "1.0.0",
+	"scripts": {
+		"test": "cucumber-js test"
+	},
+	"devDependencies": {
+		"apickli": "^2.3.3",
+		"cucumber": "^6.0.5"
+	},
+	"dependencies": {
+		"apigeelint": "^2.9.0"
+		}
+}

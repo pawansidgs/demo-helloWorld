@@ -1,0 +1,25 @@
+[
+    {
+        "name": "OTP_Product",
+        "apiResources": [],
+        "approvalType": "auto",
+        "attributes": [
+            {
+                "name": "description",
+                "value": "OTP_Product"
+            }
+        ],
+        "description": "OTP_Product",
+        "displayName": "OTP_Product",
+        "environments": [
+            "dev-1"
+        ],
+        "proxies": [
+            "OTP_Generation_Service_REST"
+        ],
+        "quota": "3000",
+        "quotaInterval": "1",
+        "quotaTimeUnit": "minute",
+        "scopes": []
+    } 
+]
