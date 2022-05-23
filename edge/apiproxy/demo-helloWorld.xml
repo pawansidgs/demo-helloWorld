@@ -1,64 +1,12 @@
-<APIProxy revision="114" name="demo-helloWorld">
-    <DisplayName></DisplayName>
-    <Description></Description>
-    <CreatedAt>1633350787149</CreatedAt>
-    <LastModifiedAt>1633350895385</LastModifiedAt>
-    <BasePaths>/api/demo-helloWorld</BasePaths>
-    <Policies>
-        <Policy>RF-faultResponseNotFound</Policy>
-        <Policy>RF-handlePreflightRequest</Policy>
-        <Policy>RF-invalidContenType</Policy>
-        <Policy>RF-invalidRequestScope</Policy>
-        <Policy>SA-rateLimit</Policy>
-        <Policy>Verify-API-Key</Policy>
-        <Policy>Verify-JWT</Policy>
-        <Policy>XML-to-JSON</Policy>
-        <Policy>XSLT-request</Policy>
-        <Policy>XSLT-response</Policy>
-        <Policy>XSLT-setBackendResponseLog</Policy>
-        <Policy>AC-accesscontrol</Policy>
-        <Policy>AM-setAuthHeader</Policy>
-        <Policy>AM-setPayload</Policy>
-        <Policy>AM-setPayloadResponse</Policy>
-        <Policy>AM-setRequestContentLogs</Policy>
-        <Policy>AM-setResponseContentLogs</Policy>
-        <Policy>AM-setSuccessFlag</Policy>
-        <Policy>AM-setTransformedPayloadLog</Policy>
-        <Policy>Decode-JWT</Policy>
-        <Policy>EV-extractPayload</Policy>
-        <Policy>EV-extractTransactionId</Policy>
-        <Policy>EV-setRequestRefNoLogs</Policy>
-        <Policy>EV-setResponseErrorCodeLogs</Policy>
-        <Policy>FC-FaultRules</Policy>
-        <Policy>FC-setResponseHeaders</Policy>
-        <Policy>FC-validateCertificateAndExtractPublickey</Policy>
-        <Policy>FC-validateToken</Policy>
-        <Policy>Generate-JWS</Policy>
-        <Policy>JS-corsValidation</Policy>
-        <Policy>JS-validateScope</Policy>
-        <Policy>JS-validatingIP</Policy>
-        <Policy>JSON-to-XML</Policy>
-        <Policy>KVM-readCommonConfig</Policy>
-        <Policy>ML-SIEM</Policy>
-        <Policy>ML-setMessageLogging</Policy>
-        <Policy>Quota</Policy>
-        <Policy>RF-badRequest</Policy>
-        <Policy>RF-faultResponseMethodNotAllowed</Policy>
-        <Policy>FC-Decryption</Policy>
-        <Policy>FC-threatProtection</Policy>
-        <Policy>FC-Encryption</Policy>
-    </Policies>
+<APIProxy revision="19" name="demo-helloWorld">
+    <DisplayName>EchoIP</DisplayName>
+    <Description>vsts git: 9a71a117 fv-az124-258</Description>
+    <CreatedAt>1653087395540</CreatedAt>
+    <LastModifiedAt>1653087395540</LastModifiedAt>
+    <BasePaths>/v6/mock</BasePaths>
     <ProxyEndpoints>
         <ProxyEndpoint>default</ProxyEndpoint>
     </ProxyEndpoints>
-    <Resources>
-        <Resource>jsc://JS-corsValidation.js</Resource>
-        <Resource>jsc://JS-validateIP.js</Resource>
-        <Resource>jsc://JS-validateScope.js</Resource>
-        <Resource>xsl://XSLT-request.xsl</Resource>
-        <Resource>xsl://XSLT-response.xsl</Resource>
-        <Resource>xsl://XSLT-setBackendResponseLog.xsl</Resource>
-    </Resources>
     <TargetEndpoints>
         <TargetEndpoint>default</TargetEndpoint>
     </TargetEndpoints>
