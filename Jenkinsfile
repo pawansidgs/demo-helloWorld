@@ -38,11 +38,11 @@ stages {
                     if (env.BRANCH_NAME == 'develop') {
                         sh '''
                         echo "Modifying POM file with development configuration"
-                        // sed -i 's#<id>apigee_dev_id</id>#<id>'$apg_env_dev'</id>#' pom.xml
-                        // sed -i 's#<apigee.profile>apigee_dev_prof</apigee.profile>#<apigee.profile>'$apg_prof_dev'</apigee.profile>#' pom.xml
-                        // sed -i 's#<apigee.env>apigee_dev_env</apigee.env>#<apigee.env>'$apg_env_dev'</apigee.env>#' pom.xml
-                        // sed -i 's#<apigee.serviceaccount.file>apigee_dev_svc</apigee.serviceaccount.file>#<apigee.serviceaccount.file>'$apg_svc_dev'</apigee.serviceaccount.file>#' pom.xml
-                        // sed -i 's#<apigee.org>apigee_dev_org</apigee.org>#<apigee.org>'$apg_org_dev'</apigee.org>#' pom.xml
+                         sed -i 's#<id>apigee_dev_id</id>#<id>'$apg_env_dev'</id>#' pom.xml
+                         sed -i 's#<apigee.profile>apigee_dev_prof</apigee.profile>#<apigee.profile>'$apg_prof_dev'</apigee.profile>#' pom.xml
+                         sed -i 's#<apigee.env>apigee_dev_env</apigee.env>#<apigee.env>'$apg_env_dev'</apigee.env>#' pom.xml
+                         sed -i 's#<apigee.serviceaccount.file>apigee_dev_svc</apigee.serviceaccount.file>#<apigee.serviceaccount.file>'$apg_svc_dev'</apigee.serviceaccount.file>#' pom.xml
+                         sed -i 's#<apigee.org>apigee_dev_org</apigee.org>#<apigee.org>'$apg_org_dev'</apigee.org>#' pom.xml
                         '''
                        }
                     else if (env.BRANCH_NAME == 'uat') {
