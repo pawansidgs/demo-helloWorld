@@ -4,7 +4,7 @@ pipeline {
     
     environment {
     //Apigee-environment for each environment
-    apg_env_dev = "dev-4"
+    apg_env_dev = "dev-1"
     apg_env_uat = "uatint01"
     apg_env_prod = "prodint01"
     
@@ -19,7 +19,7 @@ pipeline {
     apg_svc_prod = "hdfcbank-apigee-runtime-prod"
         
     //API profile for each environment
-    apg_prof_dev = "dev-4"
+    apg_prof_dev = "dev-1"
     apg_prof_uat = "uatint01"
     apg_prof_prod = "prodint01"    
 }
