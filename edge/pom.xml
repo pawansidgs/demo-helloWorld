@@ -158,7 +158,7 @@
                 <!--<apigee.mfatoken>${mfatoken}</apigee.mfatoken>--> <!-- optional: mfa -->
                 <!--<apigee.bearer>${bearer}</apigee.bearer>--><!-- this takes precedence over service account file -->
 				<apigee.refresh>${refresh}</apigee.refresh> <!-- optional: Refresh token override -->
-                <apigee.serviceaccount.file>./sidgs-hybrid-adcaf5883700.json</apigee.serviceaccount.file>
+                <apigee.serviceaccount.file>./apigee_dev_svc</apigee.serviceaccount.file>
                 <apigee.options>override</apigee.options><!-- override is default. Other options are async|clean--> 
 				<!--<apigee.clientid>${clientId}</apigee.clientid>--> <!-- optional: Oauth Client Id - Default is edgecli-->
                 <!--<apigee.clientsecret>${clientSecret}</apigee.clientsecret>--> <!-- optional: Oauth Client Secret Default is edgeclisecret-->
