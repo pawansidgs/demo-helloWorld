@@ -4,17 +4,17 @@ pipeline {
     
     environment {
     //Apigee-environment for each environment
-    apg_env_dev = "devint01"
+    apg_env_dev = "dev-4"
     apg_env_uat = "uatint01"
     apg_env_prod = "prodint01"
     
     //Apigee organization for each environment
-    apg_org_dev = "hdfcbank-apigee-runtime-dev"
+    apg_org_dev = "sidgs-hybrid"
     apg_org_uat = "hdfcbank-apigee-runtime-uat"
     apg_org_prod = "hdfcbank-apigee-runtime-prod"
 
     //Service account filename for each environment
-    apg_svc_dev = "hdfcbank-apigee-runtime-dev"
+    apg_svc_dev = "sidgs-hybrid-adcaf5883700.json"
     apg_svc_uat = "hdfcbank-apigee-runtime-uat"
     apg_svc_prod = "hdfcbank-apigee-runtime-prod"
 }
