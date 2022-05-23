@@ -79,7 +79,7 @@ stages {
                     if (env.BRANCH_NAME == 'develop') {
                         sh '''
                         cd /tmp
-                        la -la 
+                        ls -la 
                         cp /tmp/APIGEE/sidgs_dev_sa.enc .
                         export key=$EncCred_PSW
                         openssl enc -d -aes-256-cbc -in sidgs_dev_sa.enc -out $apg_svc_dev.json -k $key
