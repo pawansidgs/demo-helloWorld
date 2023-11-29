@@ -4,7 +4,7 @@
     <Response/>
   </PreFlow>
   <Flows/>
-  <PostFlow name="PostFlow">
+  <PostFlow name123="PostFlow">
     <Request/>
     <Response/>
   </PostFlow>
