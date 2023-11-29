@@ -145,20 +145,20 @@
     </build>
 <profiles>
          <profile>
-            <id>dev-1</id>
+            <id>apigee_dev_id</id>
             <properties>
-               <apigee.profile>dev-1</apigee.profile>
+               <apigee.profile>apg_prof_dev</apigee.profile>
                 <!--<options>validate</options>--><!-- default org, replace with default org to avoid passing parameter e.g. -Dorg testmyapi -->
                 <apigee.hosturl>https://apigee.googleapis.com</apigee.hosturl>
                 <apigee.apiversion>v1</apigee.apiversion>
-                <apigee.org>${org}</apigee.org>
-                <apigee.env>dev-1</apigee.env>
+                <apigee.org>apigee_dev_org<apigee.org>
+                <apigee.env>apigee_dev_env</apigee.env>
                 <apigee.authtype>oauth</apigee.authtype> <!-- only option -->
 				<!--<apigee.tokenurl>${tokenurl}</apigee.tokenurl>--> <!-- optional: oauth -->
                 <!--<apigee.mfatoken>${mfatoken}</apigee.mfatoken>--> <!-- optional: mfa -->
                 <!--<apigee.bearer>${bearer}</apigee.bearer>--><!-- this takes precedence over service account file -->
 				<apigee.refresh>${refresh}</apigee.refresh> <!-- optional: Refresh token override -->
-                <apigee.serviceaccount.file>./sidgs-hybrid-adcaf5883700.json</apigee.serviceaccount.file>
+                <apigee.serviceaccount.file>./apigee_dev_svc</apigee.serviceaccount.file>
                 <apigee.options>override</apigee.options><!-- override is default. Other options are async|clean--> 
 				<!--<apigee.clientid>${clientId}</apigee.clientid>--> <!-- optional: Oauth Client Id - Default is edgecli-->
                 <!--<apigee.clientsecret>${clientSecret}</apigee.clientsecret>--> <!-- optional: Oauth Client Secret Default is edgeclisecret-->

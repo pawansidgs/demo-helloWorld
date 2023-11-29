@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><ProxyEndpoint name="default">
+<?xml version="1.0" encoding="UTF-8"?><ProxyEndpoint name="api-proxy">
   <PreFlow name="PreFlow">
     <Request/>
     <Response/>
   </PreFlow>
   <Flows/>
-  <PostFlow name="PostFlow">
+  <PostFlow name123="PostFlow">
     <Request/>
     <Response/>
   </PostFlow>
